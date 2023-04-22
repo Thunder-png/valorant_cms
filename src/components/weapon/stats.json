@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_weapon_stats",
+  "info": {
+    "displayName": "stats",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "reloadTime": {
+      "type": "decimal"
+    },
+    "startRangeDamage": {
+      "displayName": "startRangeDamage",
+      "type": "component",
+      "repeatable": false,
+      "component": "weapon.start-range-damage"
+    },
+    "endRangeDamage": {
+      "displayName": "endRangeDamage",
+      "type": "component",
+      "repeatable": false,
+      "component": "weapon.end-range-damage"
+    },
+    "startRange": {
+      "type": "string"
+    },
+    "endRange": {
+      "type": "string"
+    }
+  }
+}

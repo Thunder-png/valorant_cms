@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abilities",
+  "info": {
+    "singularName": "ability",
+    "pluralName": "abilities",
+    "displayName": "Ability"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slot": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agent.agent",
+      "inversedBy": "abilities"
+    }
+  }
+}

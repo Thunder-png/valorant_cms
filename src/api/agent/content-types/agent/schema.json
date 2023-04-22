@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agents",
+  "info": {
+    "singularName": "agent",
+    "pluralName": "agents",
+    "displayName": "Agent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "agent_id": {
+      "type": "string",
+      "unique": true
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 55
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "abilities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ability.ability",
+      "mappedBy": "agent"
+    },
+    "agent_roles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::agent-role.agent-role",
+      "inversedBy": "agents"
+    }
+  }
+}

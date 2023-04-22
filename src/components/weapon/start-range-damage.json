@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_weapon_start_range_damages",
+  "info": {
+    "displayName": "startRangeDamage"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "decimal"
+    },
+    "body": {
+      "type": "decimal"
+    },
+    "leg": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agent_roles",
+  "info": {
+    "singularName": "agent-role",
+    "pluralName": "agent-roles",
+    "displayName": "agent_role"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "agent_role_id": {
+      "type": "string",
+      "unique": true
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::agent.agent",
+      "mappedBy": "agent_roles"
+    }
+  }
+}
