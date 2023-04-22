@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/httpdajc/public_html/valorant_cms
+    - export STRAPI_PORT=3000
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R .* $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - /usr/local/bin/npm ci --only=production
+    - /usr/local/bin/npm run build
+    - echo "PassengerEnabled on" > $DEPLOYPATH/.htaccess
+    - echo "PassengerAppRoot $DEPLOYPATH" >> $DEPLOYPATH/.htaccess
+    - echo "PassengerAppType node" >> $DEPLOYPATH/.htaccess
+    - echo "PassengerStartupFile $DEPLOYPATH/node_modules/strapi/bin/strapi.js" >> $DEPLOYPATH/.htaccess
+    - echo "PassengerNodejs /usr/local/bin/node" >> $DEPLOYPATH/.htaccess
+    - echo "PassengerAppEnv production" >> $DEPLOYPATH/.htaccess
+    - echo "PassengerSpawnMethod direct" >> $DEPLOYPATH/.htaccess
+    - echo "SetEnv PORT $STRAPI_PORT" >> $DEPLOYPATH/.htaccess
